@@ -149,4 +149,13 @@ describe("gameplay works correctly", () => {
 
     });
 
+    test("newGame should reset game.turnNumber", () => {
+
+        game.turnNumber = 42;
+
+        newGame();
+        expect(game.turnNumber).toBe(0);
+
+    });
+
 });
