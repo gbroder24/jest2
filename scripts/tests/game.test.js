@@ -48,6 +48,12 @@ describe("game object contains correct keys", () => {
 
     });
 
+    test("turnNumber key exists", () => {
+
+        expect("turnNumber" in game).toBe(true);
+
+    });
+
 } );
 
 describe("newGame works correctly", () => {
@@ -93,14 +99,6 @@ describe("newGame works correctly", () => {
         expect(document.getElementById("score").innerText).toEqual(0);
 
     });
-
-    test("turnNumber key exists", () => {
-
-        expect("turnNumber" in game).toBe(true);
-
-    });
-
-    
 
 });
 
