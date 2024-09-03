@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const { game, newGame, showScore } = require("../game");
+const { game, newGame, showScore, addTurn } = require("../game");
 
 beforeAll(() => {
 
@@ -59,7 +59,7 @@ describe("newGame works correctly", () => {
         game.currentGame = ["button1", "button2"];
         document.getElementById("score").innerHTML = "42";
         newGame();
-        showScore();
+        
 
     });
 
@@ -69,17 +69,25 @@ describe("newGame works correctly", () => {
 
     });
 
+    test("should add one move in the computers game array", () => {
+
+        expect(game.currentGame.length).toBe(1);
+
+    });
+
+    
     test("should empty playersMove array", () => {
 
-        expect(game.playerMoves.length).toEqual(0);
+        expect(game.playerMoves.length).toBe(0);
 
     });
 
-    test("should empty currentGame array", () => {
+    // Test removed. No longer needed as we need to test for an element in the computers array. 
+    // test("should empty currentGame array", () => {
 
-        expect(game.currentGame.length).toEqual(0);
+    //     expect(game.currentGame.length).toEqual(0);
 
-    });
+    // });
 
     test("should display 0 for the element with id of score", () => {
 
