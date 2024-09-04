@@ -100,6 +100,18 @@ describe("newGame works correctly", () => {
 
     });
 
+    test("expect data-listener to equal true", () => {
+
+        const elements = document.getElementsByClassName("circle");
+
+        for(let element of elements) {
+
+            expect(element.getAttribute("data-listener")).toEqual("true");
+
+        };
+
+    });
+
 });
 
 describe("gameplay works correctly", () => {
